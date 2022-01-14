@@ -124,6 +124,6 @@ function handleCardClick(event) {
           matches.removeEventListener("click", handleCardClick);
         } 
       }
+    }
   }
-}
 createDivsForColors(shuffledColors);
