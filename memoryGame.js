@@ -104,6 +104,9 @@ function handleCardClick(event) {
         for (let divs of allDivs) {
           divs.addEventListener("click", handleCardClick);
         }
+        for (let matches of allMatches) {
+          matches.removeEventListener("click", handleCardClick);
+        }
       }    
       function noMatch(){
         card1.classList.remove('clicked');
@@ -116,6 +119,10 @@ function handleCardClick(event) {
         for (let divs of allDivs) {
           divs.addEventListener("click", handleCardClick);
         }
+        let allMatches = document.querySelectorAll('div.matched');
+        for (let matches of allMatches) {
+          matches.removeEventListener("click", handleCardClick);
+        } 
       }
   }
 }
