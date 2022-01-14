@@ -74,13 +74,11 @@ function handleCardClick(event) {
       for (let divs of allDivs) {
         divs.removeEventListener("click", handleCardClick);
       }
-      console.log("let's check for a match!");
       pair = Array.from(document.querySelectorAll('div.clicked'));
       card1 = pair[0];
       card2 = pair[1];
       card1color = card1.getAttribute('class'); console.log(card1, card1color);
       card2color = card2.getAttribute('class'); console.log(card2, card2color);
-      console.log(pair);
     
       if (card1color !== card2color){
         setTimeout(noMatch, 1000);
@@ -93,7 +91,6 @@ function handleCardClick(event) {
         card2.classList.add('matched');
         card1.classList.remove('clicked');
         card2.classList.remove('clicked');
-        console.log("It's a match!");
         counter = 0;
         pair=[];
         let allMatches = document.querySelectorAll('div.matched');
@@ -111,7 +108,6 @@ function handleCardClick(event) {
       function noMatch(){
         card1.classList.remove('clicked');
         card2.classList.remove('clicked');
-        console.log('Sorry, no match!');
         card1.style.backgroundColor = 'gray';
         card2.style.backgroundColor = 'gray';
         counter = 0;
